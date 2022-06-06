@@ -696,31 +696,31 @@ end)
 -- Static values that don't need convars...
 
 -- Initial length for wave 1.
-GM.WaveOneLength = 220
+GM.WaveOneLength = CreateConVar("zs_waveone_length", 220, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Initial length for wave 1.", 0):GetInt()
 
 -- Add this many seconds for each additional wave.
-GM.TimeAddedPerWave = 15
+GM.TimeAddedPerWave = CreateConVar("zs_wave_time_increment", 15, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Add this many seconds for each additional wave.", 0):GetInt()
 
 -- New players are put on the zombie team if the current wave is this or higher. Do not put it lower than 1 or you'll break the game.
-GM.NoNewHumansWave = 2
+GM.NoNewHumansWave = CreateConVar("zs_no_new_humans_wave", 2, FCVAR_ARCHIVE + FCVAR_NOTIFY, "New players are put on the zombie team if the current wave is this or higher.", 1):GetInt()
 
 -- Humans can not commit suicide if the current wave is this or lower.
-GM.NoSuicideWave = 1
+GM.NoSuicideWave = CreateConVar("zs_no_suicide_wave", 1, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Humans can not commit suicide if the current wave is this or lower.", 0):GetInt()
 
 -- How long 'wave 0' should last in seconds. This is the time you should give for new players to join and get ready.
-GM.WaveZeroLength = 150
+GM.WaveZeroLength = CreateConVar("zs_wavezero_length", 150, FCVAR_ARCHIVE + FCVAR_NOTIFY, "How long 'wave 0' should last in seconds. This is the time you should give for new players to join and get ready.", 0):GetInt()
 
 -- Time humans have between waves to do stuff without NEW zombies spawning. Any dead zombies will be in spectator (crow) view and any living ones will still be living.
-GM.WaveIntermissionLength = 60
+GM.WaveIntermissionLength = CreateConVar("zs_wave_intermission_length", 60, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Time humans have between waves to do stuff without NEW zombies spawning.", 0):GetInt()
 
 -- Time in seconds between end round and next map.
-GM.EndGameTime = 45
+GM.EndGameTime = CreateConVar("zs_end_game_time", 45, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Time in seconds between end round and next map.", 0):GetInt()
 
 -- How many clips of ammo guns from the Worth menu start with. Some guns such as shotguns and sniper rifles have multipliers on this.
-GM.SurvivalClips = 4 --2
+GM.SurvivalClips = CreateConVar("zs_survival_clips", 4, FCVAR_ARCHIVE + FCVAR_NOTIFY, "How many clips of ammo guns from the Worth menu start with. Some guns such as shotguns and sniper rifles have multipliers on this.", 0):GetInt()
 
 -- How long do humans have to wait before being able to get more ammo from a resupply box?
-GM.ResupplyBoxCooldown = 60
+GM.ResupplyBoxCooldown = CreateConVar("zs_resupply_cooldown", 60, FCVAR_ARCHIVE + FCVAR_NOTIFY, "How long do humans have to wait before being able to get more ammo from a resupply box?", 0):GetInt()
 
 -- Put your unoriginal, 5MB Rob Zombie and Metallica music here.
 GM.LastHumanSound = Sound("zombiesurvival/lasthuman.ogg")
@@ -739,26 +739,26 @@ GM.UseOnlineProfiles = true
 
 -- This multiplier of points will save over to the next round. 1 is full saving. 0 is disabled.
 -- Setting this to 0 will not delete saved points and saved points do not "decay" if this is less than 1.
-GM.PointSaving = 0
+GM.PointSaving = CreateConVar("zs_point_saving", 0, FCVAR_ARCHIVE + FCVAR_NOTIFY, "This multiplier of points will save over to the next round. 1 is full saving. 0 is disabled.", 0):GetInt()
 
 -- Lock item purchases to waves. Tier 2 items can only be purchased on wave 2, tier 3 on wave 3, etc.
 -- HIGHLY suggested that this is on if you enable point saving. Always false if objective map, zombie escape, classic mode, or wave number is changed by the map.
 GM.LockItemTiers = false
 
 -- Don't save more than this amount of points. 0 for infinite.
-GM.PointSavingLimit = 0
+GM.PointSavingLimit = CreateConVar("zs_point_saving_limit", 0, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Don't save more than this amount of points. 0 for infinite.", 0):GetInt()
 
 -- For Classic Mode
-GM.WaveIntermissionLengthClassic = 20
-GM.WaveOneLengthClassic = 120
-GM.TimeAddedPerWaveClassic = 10
+GM.WaveIntermissionLengthClassic = CreateConVar("zs_wave_intermission_length_classic", 20, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Time humans have between waves to do stuff without NEW zombies spawning.", 0):GetInt()
+GM.WaveOneLengthClassic = CreateConVar("zs_waveone_length_classic", 120, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Initial length for wave 1.", 0):GetInt()
+GM.TimeAddedPerWaveClassic = CreateConVar("zs_wave_time_increment_classic", 10, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Add this many seconds for each additional wave.", 0):GetInt()
 
 -- Max amount of damage left to tick on these. Any more pending damage is ignored.
-GM.MaxPoisonDamage = 50
-GM.MaxBleedDamage = 50
+GM.MaxPoisonDamage = CreateConVar("zs_max_poison_damage", 50, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Max amount of damage left to tick. Any more pending damage is ignored.", 0):GetInt()
+GM.MaxBleedDamage = CreateConVar("zs_max_bleed_damage", 50, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Max amount of damage left to tick. Any more pending damage is ignored.", 0):GetInt()
 
 -- Give humans this many points when the wave ends.
-GM.EndWavePointsBonus = 5
+GM.EndWavePointsBonus = CreateConVar("zs_end_wave_points_bonus", 5, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Give humans this many points when the wave ends.", 0):GetInt()
 
 -- Also give humans this many points when the wave ends, multiplied by (wave - 1)
-GM.EndWavePointsBonusPerWave = 1
+GM.EndWavePointsBonusPerWave = CreateConVar("zs_end_wave_points_bonus_per_wave", 1, FCVAR_ARCHIVE + FCVAR_NOTIFY, "Also give humans this many points when the wave ends, multiplied by (wave - 1).", 0):GetInt()
